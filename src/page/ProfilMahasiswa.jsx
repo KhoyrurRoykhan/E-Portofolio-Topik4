@@ -24,17 +24,17 @@ const ProfilMahasiswa = () => {
       {
         judul: "Kuliner Khas",
         deskripsi: "Soto Banjar, Apam, dan Ikan Haruan Bakar",
-        ikon: <Coffee className="w-8 h-8 text-indigo-500" />,
+        ikon: <Coffee className="w-8 h-8 text-blue-500" />,
       },
       {
         judul: "Budaya",
         deskripsi: "Madihin, Bapandung, dan tradisi lisan lainnya",
-        ikon: <Music className="w-8 h-8 text-indigo-500" />,
+        ikon: <Music className="w-8 h-8 text-purple-500" />,
       },
       {
         judul: "Tempat Ikonik",
         deskripsi: "Pasar Terapung, Pulau Kembang, dan Menara Pandang",
-        ikon: <TreePine className="w-8 h-8 text-indigo-500" />,
+        ikon: <TreePine className="w-8 h-8 text-green-500" />,
       },
     ],
     riwayatPendidikan: [
@@ -43,14 +43,14 @@ const ProfilMahasiswa = () => {
         nama: "SMKN 3 Marabahan",
         jurusan: "Teknik Komputer dan Jaringan",
         ikon: <School className="w-6 h-6" />,
-        warna: "from-green-500 to-emerald-600",
+        warna: "from-green-500 to-emerald-500",
       },
       {
         jenjang: "S-1",
         nama: "FKIP Universitas Lambung Mangkurat",
         jurusan: "Pendidikan Komputer",
         ikon: <GraduationCap className="w-6 h-6" />,
-        warna: "from-blue-500 to-indigo-600",
+        warna: "from-blue-500 to-purple-500",
       },
     ],
     inspirasi: `Sejak kecil, saya terpesona oleh cara teknologi mengubah dunia. Guru pertama yang mengenalkan saya pada komputer di SMK menanamkan keyakinan bahwa setiap siswa, dari mana pun asalnya, berhak mendapatkan pendidikan berkualitas. Dari situlah saya bertekad menjadi guru profesional yang tak hanya mengajar, tetapi juga membimbing siswa menemukan potensinya di era digital. Melalui PPL Terbimbing dan pendalaman pedagogi modern, saya ingin membawa suasana kelas yang interaktif, kreatif, dan inklusif.`,
@@ -69,28 +69,37 @@ const ProfilMahasiswa = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50">
-      {/* Hero Profile - SOLID COLOR */}
-      <section className="relative w-full bg-slate-800 text-white py-16 md:py-20 overflow-hidden">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-indigo-400/20 rounded-full mix-blend-multiply filter blur-3xl floating-shape"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-400/10 rounded-full mix-blend-multiply filter blur-3xl floating-shape-delayed"></div>
-        <div className="absolute inset-0 bg-black/20 z-0"></div>
-        <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div className="w-full min-h-screen bg-[#F2F2F7] relative overflow-hidden">
+      {/* Hero Profile - Liquid Glass ala iOS 26 */}
+      <section className="relative w-full bg-gradient-to-br from-[#007AFF] via-[#5856D6] to-[#AF52DE] text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/40 rounded-full mix-blend-overlay filter blur-3xl floating-shape"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/30 rounded-full mix-blend-overlay filter blur-3xl floating-shape-delayed"></div>
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] z-0"></div>
+
+        <div className="relative z-10 w-full px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="text-center md:text-left"
           >
-            {/* Nama dipastikan putih */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-white">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="hero-glass inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full text-sm md:text-base font-medium text-white"
+            >
+              <GraduationCap size={18} />
+              <span>Calon Guru Profesional</span>
+            </motion.div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight tracking-tight text-white">
               {profile.name}
             </h1>
-            <p className="text-xl md:text-2xl text-indigo-200 flex items-center gap-2 justify-center md:justify-start">
+            <p className="text-xl md:text-2xl text-white/90 flex items-center gap-2 justify-center md:justify-start">
               <GraduationCap size={24} /> {profile.program}
             </p>
-            <div className="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
-              <span className="bg-indigo-700/50 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+            <div className="flex flex-wrap gap-2 mt-6 justify-center md:justify-start">
+              <span className="hero-glass px-4 py-2 rounded-full text-sm flex items-center gap-2 text-white">
                 <MapPin size={14} /> {profile.asal}
               </span>
             </div>
@@ -98,20 +107,28 @@ const ProfilMahasiswa = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-indigo-400 shadow-2xl"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex-shrink-0"
           >
-            <img
-              src={profile.foto}
-              alt={profile.name}
-              className="w-full h-full object-cover"
-            />
+            <div className="relative w-52 h-52 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-white/40 shadow-2xl backdrop-blur-md">
+              <img
+                src={profile.foto}
+                alt={profile.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-purple-300/30"></div>
+            </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 via-white/20 to-transparent"></div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 100" className="w-full h-auto">
+            <path fill="#F2F2F7" d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,74.7C672,75,768,53,864,42.7C960,32,1056,32,1152,37.3C1248,43,1344,53,1392,58.7L1440,64L1440,100L0,100Z" />
+          </svg>
+        </div>
       </section>
 
-      {/* Konten lainnya tetap sama */}
+      {/* Konten dengan Glassmorphism */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-12">
         {/* Riwayat Pendidikan */}
         <motion.section
@@ -121,24 +138,24 @@ const ProfilMahasiswa = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4 flex items-center justify-center gap-3">
-            <BookOpen size={32} className="text-indigo-600" />
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-4 flex items-center justify-center gap-3">
+            <BookOpen size={36} className="text-blue-600" />
             Riwayat Pendidikan
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 rounded-full"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto mb-12 rounded-full"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {profile.riwayatPendidikan.map((item, idx) => (
               <motion.div
                 key={idx}
                 variants={fadeInUp}
-                whileHover={{ y: -5 }}
-                className="backdrop-blur-sm bg-white/70 rounded-2xl shadow-lg p-6 border border-white/60 ring-1 ring-black/5"
+                whileHover={{ y: -8 }}
+                className="glass-card glass-card-hover rounded-[2.5rem] p-8 transition-all duration-300"
               >
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${item.warna} text-white mb-4`}>
+                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.warna} text-white mb-6 shadow-lg`}>
                   {item.ikon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">{item.jenjang} – {item.nama}</h3>
-                <p className="text-gray-600 mt-1">{item.jurusan}</p>
+                <h3 className="text-2xl font-bold text-gray-900">{item.jenjang} – {item.nama}</h3>
+                <p className="text-gray-600 mt-2 text-lg">{item.jurusan}</p>
               </motion.div>
             ))}
           </div>
@@ -152,21 +169,21 @@ const ProfilMahasiswa = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4 flex items-center justify-center gap-3">
-            <Building2 size={32} className="text-indigo-600" />
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-4 flex items-center justify-center gap-3">
+            <Building2 size={36} className="text-blue-600" />
             Keunikan Daerah Asal
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-10 rounded-full"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto mb-12 rounded-full"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {profile.keunikanDaerah.map((item, idx) => (
               <motion.div
                 key={idx}
                 variants={fadeInUp}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all border border-white/60"
+                whileHover={{ y: -12, scale: 1.03 }}
+                className="glass-card glass-card-hover rounded-[2.5rem] p-8 text-center transition-all duration-300"
               >
-                <div className="flex justify-center mb-3">{item.ikon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.judul}</h3>
+                <div className="flex justify-center mb-4">{item.ikon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.judul}</h3>
                 <p className="text-gray-600">{item.deskripsi}</p>
               </motion.div>
             ))}
@@ -181,12 +198,12 @@ const ProfilMahasiswa = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 md:p-8 border-l-8 border-indigo-600 border border-white/60">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <Award className="w-8 h-8 text-indigo-600" />
+          <div className="glass-card glass-card-hover rounded-[2.5rem] p-8 md:p-10 border-l-4 border-blue-500">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <Award className="w-8 h-8 text-blue-600" />
               Inspirasi & Tujuan Menjadi Guru Profesional
             </h2>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line text-lg">
               {profile.inspirasi}
             </p>
           </div>
@@ -200,12 +217,12 @@ const ProfilMahasiswa = () => {
           viewport={{ once: true }}
           className="text-center py-8"
         >
-          <div className="backdrop-blur-sm bg-white/40 rounded-2xl p-8 border border-white/60 shadow-lg">
-            <Quote className="w-10 h-10 text-indigo-400 mb-3 mx-auto" />
-            <p className="text-xl md:text-2xl italic font-light text-gray-700 max-w-3xl mx-auto">
+          <div className="glass-card rounded-[2.5rem] p-10 max-w-4xl mx-auto">
+            <Quote size={40} className="text-blue-400 mb-4 mx-auto" />
+            <p className="text-2xl md:text-3xl italic font-light text-gray-800 leading-relaxed">
               {profile.kutipan}
             </p>
-            <p className="mt-4 text-indigo-700 font-semibold flex items-center justify-center gap-1">
+            <p className="mt-6 text-blue-600 font-semibold flex items-center justify-center gap-1">
               <ChevronRight size={16} /> {profile.name}
             </p>
           </div>
@@ -213,7 +230,7 @@ const ProfilMahasiswa = () => {
       </div>
 
       {/* Footer */}
-      <footer className="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-gray-300 py-8 text-center text-sm md:text-base">
+      <footer className="w-full bg-gray-900/90 backdrop-blur-md text-gray-300 py-8 text-center text-sm md:text-base mt-12">
         <div className="max-w-4xl mx-auto px-6">
           <p className="opacity-80">
             © 2025 — E-Portfolio PPG Calon Guru | Universitas Lambung Mangkurat | PPL Terbimbing
@@ -228,11 +245,28 @@ const ProfilMahasiswa = () => {
           50% { transform: translateY(-20px); }
         }
         .floating-shape {
-          animation: float 6s ease-in-out infinite;
+          animation: float 8s ease-in-out infinite;
         }
         .floating-shape-delayed {
-          animation: float 8s ease-in-out infinite;
-          animation-delay: 2s;
+          animation: float 10s ease-in-out infinite;
+          animation-delay: 3s;
+        }
+        .glass-card {
+          background: rgba(255, 255, 255, 0.65);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
+          border: 1px solid rgba(255, 255, 255, 0.6);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+        .glass-card-hover:hover {
+          background: rgba(255, 255, 255, 0.8);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+        .hero-glass {
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(40px);
+          -webkit-backdrop-filter: blur(40px);
+          border: 1px solid rgba(255, 255, 255, 0.4);
         }
       `}</style>
     </div>
