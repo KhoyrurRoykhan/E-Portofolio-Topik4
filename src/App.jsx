@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Beranda from './page/Beranda';
-import ProfilMahasiswa from './Page/ProfilMahasiswa';
+import ProfilMahasiswa from './page/ProfilMahasiswa';
 import ArtefakPembelajaran from './page/ArtefakPembelajaran';
 // import PenilaianInstrumen from './page/PenilaianInstrumen';
 // import ModelGuru from './page/ModelGuru';
