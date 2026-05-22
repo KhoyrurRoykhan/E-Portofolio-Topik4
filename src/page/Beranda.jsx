@@ -306,7 +306,7 @@ const Beranda = () => {
               Sekolah mitra tempat pelaksanaan PPL Terbimbing. SMPN 2 Banjarmasin menjadi wahana praktik mengajar nyata yang membentuk kompetensi pedagogik, profesional, dan sosial.
             </p>
             <div className="flex flex-wrap gap-4 mt-6 text-sm font-medium text-green-600">
-              <span className="flex items-center gap-1"><MapPin size={14} /> Jl. Pangeran Hidayatullah</span>
+              <span className="flex items-center gap-1"><MapPin size={14} /> Jl. Batu Benawa Raya No.33</span>
               <span className="flex items-center gap-1"><School size={14} /> Sekolah Negeri</span>
             </div>
             <ImageCarousel images={smp2Images} alt="SMPN 2 Banjarmasin" />
@@ -364,7 +364,7 @@ const Beranda = () => {
             viewport={{ once: true }}
           >
             <div className="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-              <AnimatedNumber value={2} />
+              <AnimatedNumber value={3} />
             </div>
             <div className="text-gray-600 font-medium mt-2">Siklus PPL</div>
           </motion.div>
