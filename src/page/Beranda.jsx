@@ -19,7 +19,16 @@ import {
   ChevronRightIcon,
 } from 'lucide-react';
 
-// Komponen animasi angka (tidak berubah)
+// IMPOR FOTO DARI ASSETS
+import berandaFoto from '../assets/beranda.jpeg';
+import ulm1 from '../assets/ulm1.jpg';
+import ulm2 from '../assets/ulm2.jpg';
+import ulm3 from '../assets/ulm3.jpeg';
+import smpn2_1 from '../assets/smpn2(1).png';
+import smpn2_2 from '../assets/smpn2(2).png';
+import smpn2_3 from '../assets/smpn2(3).png';
+
+// Komponen animasi angka
 const AnimatedNumber = ({ value }) => {
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { duration: 2000 });
@@ -140,21 +149,12 @@ const Beranda = () => {
     },
   ];
 
-  const ulmImages = [
-    'https://placehold.co/600x300/1e40af/white?text=ULM+Tampak+Depan',
-    'https://placehold.co/600x300/2563eb/white?text=ULM+Lingkungan+Kampus',
-    'https://placehold.co/600x300/1d4ed8/white?text=ULM+Fakultas+Keguruan',
-  ];
-
-  const smp2Images = [
-    'https://placehold.co/600x300/166534/white?text=SMPN+2+Banjarmasin',
-    'https://placehold.co/600x300/15803d/white?text=Kegiatan+PPL+di+SMPN+2',
-    'https://placehold.co/600x300/047857/white?text=Ruang+Kelas+SMPN+2',
-  ];
+  // Gunakan gambar yang sudah diimpor
+  const ulmImages = [ulm1, ulm2, ulm3];
+  const smp2Images = [smpn2_1, smpn2_2, smpn2_3];
 
   return (
     <div className="w-full min-h-screen bg-[#F2F2F7] relative overflow-hidden">
-      {/* CSS untuk animasi dan efek liquid glass */}
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -186,9 +186,8 @@ const Beranda = () => {
         }
       `}</style>
 
-      {/* Hero Section dengan Liquid Glass */}
+      {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-br from-[#007AFF] via-[#5856D6] to-[#AF52DE] text-white py-24 md:py-32 overflow-hidden">
-        {/* Ornamen kaca mengambang */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/40 rounded-full mix-blend-overlay filter blur-3xl floating-shape"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/30 rounded-full mix-blend-overlay filter blur-3xl floating-shape-delayed"></div>
         <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] z-0"></div>
@@ -247,7 +246,7 @@ const Beranda = () => {
           >
             <div className="relative w-52 h-52 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-4 ring-white/40 shadow-2xl backdrop-blur-md">
               <img
-                src="https://placehold.co/400x400/1e293b/white?text=Foto+Anda"
+                src={berandaFoto}
                 alt="Calon Guru PPG"
                 className="w-full h-full object-cover"
               />
@@ -256,7 +255,6 @@ const Beranda = () => {
           </motion.div>
         </div>
 
-        {/* Gelombang bawah */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 100" className="w-full h-auto">
             <path fill="#F2F2F7" d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,74.7C672,75,768,53,864,42.7C960,32,1056,32,1152,37.3C1248,43,1344,53,1392,58.7L1440,64L1440,100L0,100Z" />
@@ -264,7 +262,7 @@ const Beranda = () => {
         </div>
       </section>
 
-      {/* LPTK & Sekolah PPL dengan Glassmorphism */}
+      {/* LPTK & Sekolah PPL */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -316,7 +314,7 @@ const Beranda = () => {
         </div>
       </motion.section>
 
-      {/* Fitur Kartu - iOS Style */}
+      {/* Fitur Kartu */}
       <motion.section
         variants={stagger}
         initial="hidden"
@@ -356,7 +354,7 @@ const Beranda = () => {
         </div>
       </motion.section>
 
-      {/* Statistik dengan Glass */}
+      {/* Statistik */}
       <div className="w-full py-16 px-6 md:px-12 lg:px-24">
         <div className="glass-card rounded-[2.5rem] p-8 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <motion.div
