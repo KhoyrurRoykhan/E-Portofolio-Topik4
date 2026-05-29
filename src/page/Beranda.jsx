@@ -282,8 +282,7 @@ const Beranda = () => {
               LPTK – Universitas Lambung Mangkurat
             </h3>
             <p className="text-gray-700 mt-4 text-base leading-relaxed">
-              Lembaga Pendidikan Tenaga Kependidikan (LPTK) penyelenggara program PPG Calon Guru.
-              ULM berkomitmen mencetak pendidik profesional yang mengintegrasikan nilai lokal Kalimantan Selatan dengan pedagogi modern.
+            Menjadi program pendidikan profesi guru yang unggul dalam menghasilkan guru profesional, berdaya saing global, serta berkomitmen terhadap pengembangan pendidikan berkelanjutan berbasis IPTEKS berkearifan lokal lingkungan lahan basah.
             </p>
             <div className="flex flex-wrap gap-4 mt-6 text-sm font-medium text-blue-600">
               <span className="flex items-center gap-1"><MapPin size={14} /> Banjarmasin</span>
@@ -303,7 +302,7 @@ const Beranda = () => {
               Sekolah PPL – SMP Negeri 2 Banjarmasin
             </h3>
             <p className="text-gray-700 mt-4 text-base leading-relaxed">
-              Sekolah mitra tempat pelaksanaan PPL Terbimbing. SMPN 2 Banjarmasin menjadi wahana praktik mengajar nyata yang membentuk kompetensi pedagogik, profesional, dan sosial.
+              Sekolah mitra tempat pelaksanaan PPL Terbimbing. SMP Negeri (SMPN) 2 Banjarmasin, biasa disngkat SPENDA merupakan salah satu Sekolah Menengah Pertama Negeri yang ada di Provinsi Kalimantan Selatan, Indonesia.
             </p>
             <div className="flex flex-wrap gap-4 mt-6 text-sm font-medium text-green-600">
               <span className="flex items-center gap-1"><MapPin size={14} /> Jl. Batu Benawa Raya No.33</span>
@@ -409,9 +408,9 @@ const Beranda = () => {
         <div className="max-w-4xl mx-auto glass-card rounded-[2.5rem] p-10 text-center">
           <Quote size={36} className="text-blue-400 mb-4 mx-auto" />
           <p className="text-2xl md:text-3xl italic font-light text-gray-800 leading-relaxed">
-            Mendidik bukan hanya mengisi kepala, tetapi juga menyalakan hati.
+          “Setiap orang menjadi guru, setiap rumah menjadi sekolah.”
           </p>
-          <p className="mt-6 text-blue-600 font-medium">— Anonim</p>
+          <p className="mt-6 text-blue-600 font-medium">- KHD</p>
         </div>
       </div>
 

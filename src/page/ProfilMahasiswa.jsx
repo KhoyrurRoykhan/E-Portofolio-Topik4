@@ -15,6 +15,8 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
+import profil from '../assets/profil.jpeg';
+
 const ProfilMahasiswa = () => {
   const profile = {
     name: "Khoyrur Roykhan",
@@ -54,8 +56,8 @@ const ProfilMahasiswa = () => {
       },
     ],
     inspirasi: `Sejak kecil, saya terpesona oleh cara teknologi mengubah dunia. Guru pertama yang mengenalkan saya pada komputer di SMK menanamkan keyakinan bahwa setiap siswa, dari mana pun asalnya, berhak mendapatkan pendidikan berkualitas. Dari situlah saya bertekad menjadi guru profesional yang tak hanya mengajar, tetapi juga membimbing siswa menemukan potensinya di era digital. Melalui PPL Terbimbing dan pendalaman pedagogi modern, saya ingin membawa suasana kelas yang interaktif, kreatif, dan inklusif.`,
-    kutipan: "Guru yang hebat tidak hanya mengajar, tetapi juga menginspirasi siswa untuk bermimpi lebih tinggi.",
-    foto: "https://placehold.co/400x400/1e293b/white?text=Khoyrur+Roykhan", // ganti dengan foto Anda
+    kutipan: "“Guru adalah seorang pejuang tulus tanpa tanda jasa mencerdaskan bangsa.”",
+    foto: profil, // sekarang menggunakan foto yang diimport
   };
 
   const fadeInUp = {
@@ -223,7 +225,7 @@ const ProfilMahasiswa = () => {
               {profile.kutipan}
             </p>
             <p className="mt-6 text-blue-600 font-semibold flex items-center justify-center gap-1">
-              <ChevronRight size={16} /> {profile.name}
+              <ChevronRight size={16} /> KHD
             </p>
           </div>
         </motion.section>

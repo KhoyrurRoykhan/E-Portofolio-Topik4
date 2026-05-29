@@ -9,8 +9,14 @@ import {
   Camera,
   FileText,
   ExternalLink,
-  Download,
 } from 'lucide-react';
+
+import foto1 from '../assets/foto1.JPG';
+import foto2 from '../assets/foto2.JPG';
+import foto3 from '../assets/foto3.JPG';
+import foto4 from '../assets/foto4.jpg';
+import foto5 from '../assets/foto5.JPG';
+import foto6 from '../assets/foto6.jpg';
 
 const ArtefakPembelajaran = () => {
   const [activeTab, setActiveTab] = useState('rpp');
@@ -18,67 +24,125 @@ const ArtefakPembelajaran = () => {
   // Data RPP per siklus
   const rppData = {
     siklus1: [
-      { judul: 'RPP Siklus 1 - Pertemuan 1', mapel: 'Informatika', topik: 'Algoritma Dasar', link: '#', embed: null },
-      { judul: 'RPP Siklus 1 - Pertemuan 2', mapel: 'Informatika', topik: 'Struktur Data', link: '#', embed: null },
-      { judul: 'RPP Siklus 1 - Pertemuan 3', mapel: 'Informatika', topik: 'Flowchart', link: '#', embed: null },
+      { judul: 'RPP Siklus 1 - Pertemuan 1 (7H)', mapel: 'Informatika', topik: 'Scratch', link: 'https://drive.google.com/file/d/1qIy-R6hTL_9y3_z3C6xGQHobVDMYiOcy/view?usp=drive_link' },
+      { judul: 'RPP Siklus 1 - Pertemuan 2 (8F)', mapel: 'Informatika', topik: 'Scratch', link: 'https://drive.google.com/file/d/1i8ghpCepCDBP0X07PYY19VxmPsDZIjdu/view?usp=drive_link' },
+      { judul: 'RPP Siklus 1 - Pertemuan 3 (8E)', mapel: 'Informatika', topik: 'Blockly', link: 'https://drive.google.com/file/d/1FEa6HS5oMhrZpUkXVa4fF4AU_4lKizW4/view?usp=drive_link' },
     ],
     siklus2: [
-      { judul: 'RPP Siklus 2 - Pertemuan 1', mapel: 'Informatika', topik: 'Pemrograman Dasar', link: '#', embed: null },
-      { judul: 'RPP Siklus 2 - Pertemuan 2', mapel: 'Informatika', topik: 'Variabel & Tipe Data', link: '#', embed: null },
-      { judul: 'RPP Siklus 2 - Pertemuan 3', mapel: 'Informatika', topik: 'Percabangan', link: '#', embed: null },
+      { judul: 'RPP Siklus 2 - Pertemuan 1 (7H)', mapel: 'Informatika', topik: 'Scratch', link: 'https://drive.google.com/file/d/1Mi1Ix6t67QHWY7IzNUAT4yg-dy598BPW/view?usp=drive_link' },
+      { judul: 'RPP Siklus 2 - Pertemuan 2 (8F)', mapel: 'Informatika', topik: 'Scratch', link: 'https://drive.google.com/file/d/1lxa0RDKMNmZ5C2a0KNtYTtKGPPdthfzA/view?usp=drive_link' },
+      { judul: 'RPP Siklus 2 - Pertemuan 3 (8E)', mapel: 'Informatika', topik: 'Scratch', link: 'https://drive.google.com/file/d/1xIK86BqiR3DvQD8qMmUFJywAaNsM1NrB/view?usp=drive_link' },
     ],
     siklus3: [
-      { judul: 'RPP Siklus 3 - Pertemuan 1', mapel: 'Informatika', topik: 'Jaringan Komputer', link: '#', embed: null },
-      { judul: 'RPP Siklus 3 - Pertemuan 2', mapel: 'Informatika', topik: 'Keamanan Data', link: '#', embed: null },
+      { judul: 'RPP Siklus 3 - Pertemuan 1 (8F)', mapel: 'Informatika', topik: 'Blockly', link: 'https://drive.google.com/file/d/1xNg3pJm8aLKGLB3kj_-IjPux2maPP9xY/view?usp=drive_link' },
+      { judul: 'RPP Siklus 3 - Pertemuan 2 (8E)', mapel: 'Informatika', topik: 'Scratch', link: 'https://drive.google.com/file/d/1FFiWCv5H4MZN0m3tTuuen34vMS-aESXG/view?usp=drive_link' },
     ],
   };
 
-  // Media Flipbook
+  // Media Flipbook (link sudah diperbarui)
   const flipbooks = [
     {
-      judul: 'Flipbook - Algoritma & Pemrograman',
-      deskripsi: 'Media interaktif pengenalan algoritma menggunakan flipbook digital',
-      link: 'https://example.com/flipbook1',
-      embed: null,
+      judul: 'Flipbook - Pengenalan Scratch Dasar',
+      deskripsi: 'Media interaktif pengenalan Scratch untuk pemula',
+      link: 'https://online.fliphtml5.com/trdjn/Pengenalan-Scartch-Dasar/',
     },
     {
-      judul: 'Flipbook - Jaringan Komputer',
-      deskripsi: 'Flipbook visual tentang topologi dan protokol jaringan',
-      link: 'https://example.com/flipbook2',
-      embed: null,
+      judul: 'Flipbook - Project Scratch Lanjutan',
+      deskripsi: 'Flipbook visual tentang proyek Scratch lebih kompleks',
+      link: 'https://online.fliphtml5.com/trdjn/znvw/',
     },
   ];
 
   // Game Scratch (hasil kerja siswa)
   const scratchGames = [
     {
-      judul: 'Game Labirin Algoritma',
-      deskripsi: 'Dibuat oleh siswa kelas 7 - simulasi logika pemrograman',
-      embedUrl: 'https://scratch.mit.edu/projects/123456/embed',
-      link: '#',
+      judul: 'Game Tangkap',
+      deskripsi: 'Game sederhana menangkap objek - dibuat oleh siswa',
+      embedUrl: 'https://scratch.mit.edu/projects/1326329704/embed',
+      link: 'https://scratch.mit.edu/projects/1326329704',
     },
     {
-      judul: 'Game Simulasi Jaringan',
-      deskripsi: 'Simulasi pengiriman paket data dalam jaringan',
-      embedUrl: 'https://scratch.mit.edu/projects/789012/embed',
-      link: '#',
+      judul: 'Game Tembak Meteor',
+      deskripsi: 'Game menembak meteor di luar angkasa - dibuat oleh siswa',
+      embedUrl: 'https://scratch.mit.edu/projects/1326330920/embed',
+      link: 'https://scratch.mit.edu/projects/1326330920',
     },
   ];
 
-  // Lembar Penilaian GP dan DPL
-  const penilaianDocs = [
-    { judul: 'Lampiran 7 - Penilaian Perangkat (GP)', link: '#', tipe: 'PDF' },
-    { judul: 'Lampiran 8 - Penilaian Praktik (DPL)', link: '#', tipe: 'PDF' },
-    { judul: 'Rekap Nilai 3 Siklus', link: '#', tipe: 'Spreadsheet' },
+  // Data Penilaian GP & DPL
+  const penilaianData = [
+    {
+      judul: 'Lampiran 7 - Penilaian Perangkat (GP)',
+      tipe: 'PDF',
+      items: [
+        { label: 'Asistensi Mengajar', link: 'https://drive.google.com/file/d/1AiIRYo8RfLUveX7rHz4-1fGXxwM_n-hW/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 1', link: 'https://drive.google.com/file/d/16uIbCK_5Q9_olDZY7_Nd_zXE-hyH-qSg/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 2', link: 'https://drive.google.com/file/d/1YmcK6y9CSlrOchC6G708bxwDnVjUVzpI/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 3', link: 'https://drive.google.com/file/d/1YmcK6y9CSlrOchC6G708bxwDnVjUVzpI/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 1', link: 'https://drive.google.com/file/d/1KR0CtKJsCBQyxwNyJWEJxbgKa_xZwKqX/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 2', link: 'https://drive.google.com/file/d/1QOeJ_sp6jnoAXXbCHHyapqejLbk1yZyl/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 3', link: 'https://drive.google.com/file/d/1d7tB1mX09Ys95RnvskFN_kTjxXQUwlrE/view?usp=drive_link' },
+        { label: 'Siklus 3 Pertemuan 1', link: 'https://drive.google.com/file/d/1C1HqwOO6gxAAQZrupYdDBahxrnYMQRnr/view?usp=drive_link' },
+        { label: 'Siklus 3 Pertemuan 2', link: 'https://drive.google.com/file/d/10m9AU5MiYttqQPxdOcAM_-gNZYjMWIgg/view?usp=drive_link' },
+      ],
+    },
+    {
+      judul: 'Lampiran 8 - Penilaian Praktik Mengajar (GP)',
+      tipe: 'PDF',
+      items: [
+        { label: 'Siklus 1 Pertemuan 1', link: 'https://drive.google.com/file/d/1yP1y6DFXYHSvpt9ryfbtXW9csuJk2pXz/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 2', link: 'https://drive.google.com/file/d/1C5PAusxTu-NBhoTNVaNPeUr2zZQlKdSm/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 3', link: 'https://drive.google.com/file/d/1C5PAusxTu-NBhoTNVaNPeUr2zZQlKdSm/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 1', link: 'https://drive.google.com/file/d/1qkucgPA96n3CEXffxJPZnV-DjAjweDIe/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 2', link: 'https://drive.google.com/file/d/1GGlO646ayhW0CwkTVfsHcxIPjN_54cDW/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 3', link: 'https://drive.google.com/file/d/1CKUF3UkfXwQDJgGKUxvSSJvK2zgYQYD3/view?usp=drive_link' },
+        { label: 'Siklus 3 Pertemuan 1', link: 'https://drive.google.com/file/d/1NJ1JaAjMrpb66qEDVzyDgOnOUt1_jpWo/view?usp=drive_link' },
+        { label: 'Siklus 3 Pertemuan 2', link: 'https://drive.google.com/file/d/1ndsjWFE0A4h2u21L9_GQERvJ7rM6PXjh/view?usp=drive_link' },
+      ],
+    },
+    {
+      judul: 'Refleksi',
+      tipe: 'Dokumen',
+      items: [
+        { label: 'Asistensi Mengajar', link: 'https://drive.google.com/file/d/1Kmt2JduWVEVSiPcJxttHuFI09EyondJl/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 1', link: 'https://drive.google.com/file/d/1Eixy7Zc13KcjeU9CXSwNyTwjNVc7dYyq/view?usp=sharing' },
+        { label: 'Siklus 1 Pertemuan 2', link: 'https://drive.google.com/file/d/1NbwAcMUSKMug779L4IyxCi843VAr7xbl/view?usp=drive_link' },
+        { label: 'Siklus 1 Pertemuan 3', link: 'https://drive.google.com/file/d/13WwX_3O4KpBMEWHVKplHiIWiqGuMlpyy/view?usp=drive_link' },
+        { label: 'Siklus 2 Pertemuan 1', link: 'https://drive.google.com/file/d/1hXXsXqV6q5XDmvVbqPYhPoADWVk1y7Ho/view?usp=sharing' },
+        { label: 'Siklus 2 Pertemuan 2', link: 'https://drive.google.com/file/d/1HWnHQeabuNF7yrP5v2hg2xRjJw1fAF7Z/view?usp=sharing' },
+        { label: 'Siklus 2 Pertemuan 3', link: 'https://drive.google.com/file/d/1GTlDeQ12Ua2A47Prh9a2SXAhLcCc51on/view?usp=sharing' },
+        { label: 'Siklus 3 Pertemuan 1', link: 'https://drive.google.com/file/d/1P2gchmDBovZQMtXt9CnzYfgj-8uFqdp_/view?usp=sharing' },
+        { label: 'Siklus 3 Pertemuan 2', link: 'https://drive.google.com/file/d/1bjwbbCVMleVNksk_0VovdoeAGCaDSxTu/view?usp=sharing' },
+      ],
+    },
+    {
+      judul: 'Lembar Kunjungan Dosen',
+      tipe: 'PDF',
+      items: [
+        { label: 'Kunjungan 1', link: 'https://drive.google.com/file/d/1wz9jkKu-xpIKaH0g7h3FxmaZZmscxrrt/view?usp=drive_link' },
+        { label: 'Kunjungan 2', link: 'https://drive.google.com/file/d/11lkrdctKHZijRV2uTavUFdspVj03dDqI/view?usp=drive_link' },
+      ],
+    },
   ];
 
   // Video & Foto kegiatan
   const mediaKegiatan = [
-    { type: 'video', judul: 'Video Praktik Mengajar Siklus 1', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { type: 'video', judul: 'Video Praktik Mengajar Siklus 2', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { type: 'photo', judul: 'Foto Kegiatan PPL di SMPN 2 Banjarmasin', imageUrl: 'https://placehold.co/400x300/1e293b/white?text=Foto+PPL+1' },
-    { type: 'photo', judul: 'Diskusi Refleksi dengan Guru Pamong', imageUrl: 'https://placehold.co/400x300/1e293b/white?text=Foto+PPL+2' },
-    { type: 'video', judul: 'Video Refleksi Akhir Siklus 3', embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+    {
+      type: 'video',
+      judul: 'Video 1',
+      embedUrl: 'https://drive.google.com/file/d/17WZukjZMEJoeBjCnSBsRQRrDk-d_d8hV/preview',
+    },
+    {
+      type: 'video',
+      judul: 'Video 2',
+      embedUrl: 'https://drive.google.com/file/d/1QJfqxHt6ebX2I3Kw2Un-CoKEbgKy9zc5/preview',
+    },
+    { type: 'photo', judul: 'Foto 1', imageUrl: foto1 },
+    { type: 'photo', judul: 'Foto 2', imageUrl: foto2 },
+    { type: 'photo', judul: 'Foto 3', imageUrl: foto3 },
+    { type: 'photo', judul: 'Foto 4', imageUrl: foto4 },
+    { type: 'photo', judul: 'Foto 5', imageUrl: foto5 },
+    { type: 'photo', judul: 'Foto 6', imageUrl: foto6 },
   ];
 
   const tabs = [
@@ -161,12 +225,13 @@ const ArtefakPembelajaran = () => {
         <motion.div key={i} variants={fadeInUp} className="glass-card rounded-[2rem] p-6">
           <h3 className="text-xl font-bold text-gray-900">{game.judul}</h3>
           <p className="text-gray-600 text-sm mt-2">{game.deskripsi}</p>
-          <div className="aspect-video bg-gray-100/50 backdrop-blur-sm rounded-xl overflow-hidden mt-4 border border-white/40">
+          <div className="mt-4 aspect-video bg-gray-100/50 backdrop-blur-sm rounded-xl overflow-hidden border border-white/40">
             <iframe src={game.embedUrl} className="w-full h-full" title={game.judul} allowFullScreen></iframe>
           </div>
           <a
             href={game.link}
             target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-blue-600 mt-4 font-medium hover:text-blue-800 transition-colors"
           >
             Lihat di Scratch <ExternalLink size={14} />
@@ -176,26 +241,39 @@ const ArtefakPembelajaran = () => {
     </motion.div>
   );
 
-  // Render Penilaian
+  // Render Penilaian GP & DPL
   const renderPenilaian = () => (
-    <motion.div variants={stagger} initial="hidden" animate="visible" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {penilaianDocs.map((doc, i) => (
+    <motion.div variants={stagger} initial="hidden" animate="visible" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {penilaianData.map((doc, i) => (
         <motion.div
           key={i}
           variants={fadeInUp}
-          whileHover={{ y: -8 }}
-          className="glass-card glass-card-hover rounded-[2rem] p-6 text-center"
+          whileHover={{ y: -5 }}
+          className="glass-card glass-card-hover rounded-[2rem] p-6"
         >
-          <FileText size={40} className="mx-auto text-blue-500 mb-3" />
-          <h3 className="font-bold text-gray-900 mb-2">{doc.judul}</h3>
-          <div className="text-sm text-gray-600 mb-4">{doc.tipe}</div>
-          <a
-            href={doc.link}
-            target="_blank"
-            className="inline-flex items-center gap-2 bg-white text-gray-900 font-semibold px-5 py-2.5 rounded-full text-sm shadow-md hover:shadow-lg active:scale-95 transition-all"
-          >
-            <Download size={16} /> Unduh / Lihat
-          </a>
+          <div className="flex items-start gap-4">
+            <FileText size={36} className="text-blue-500 mt-1 flex-shrink-0" />
+            <div className="flex-1">
+              <h3 className="font-bold text-gray-900 text-lg mb-2">{doc.judul}</h3>
+              <div className="text-sm text-gray-600 mb-3">{doc.tipe}</div>
+              <ul className="space-y-2">
+                {doc.items.map((item, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                      {item.label}
+                      <ExternalLink size={12} className="opacity-70" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </motion.div>
       ))}
     </motion.div>
@@ -293,7 +371,7 @@ const ArtefakPembelajaran = () => {
         </AnimatePresence>
 
         {/* Analisis Artefak */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -311,14 +389,14 @@ const ArtefakPembelajaran = () => {
             game Scratch meningkatkan computational thinking siswa, serta penilaian Guru Pamong dan DPL menunjukkan peningkatan 
             kompetensi mengajar yang signifikan dari Siklus 1 ke Siklus 3.
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Footer */}
       <footer className="w-full bg-gray-900/90 backdrop-blur-md text-gray-300 py-8 text-center text-sm md:text-base mt-12">
         <div className="max-w-4xl mx-auto px-6">
           <p className="opacity-80">
-            © 2025 — E-Portfolio PPG Calon Guru | Universitas Lambung Mangkurat | PPL Terbimbing
+            © 2026 — E-Portfolio PPG Calon Guru - Khoyrur Roykhan | Universitas Lambung Mangkurat | PPL Terbimbing
           </p>
           <p className="mt-1 text-xs opacity-60">Menjadi guru profesional, berawal dari praktik yang bermakna.</p>
         </div>

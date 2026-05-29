@@ -11,6 +11,7 @@ const Navbar = () => {
     { path: '/', label: 'Beranda' },
     { path: '/profil', label: 'Profil' },
     { path: '/artefak', label: 'Artefak' },
+    { path: '/model-guru', label: 'Model Guru' }, // ✅ ditambahkan
   ];
 
   return (
