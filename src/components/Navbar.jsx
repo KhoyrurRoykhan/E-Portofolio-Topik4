@@ -25,7 +25,7 @@ const Navbar = () => {
                 <GraduationCap size={20} />
               </div>
               <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700">
-                E-Portfolio
+                E-Portofolio
               </span>
             </Link>
           </div>
